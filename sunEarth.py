@@ -26,7 +26,7 @@ dt = 0.1
 for _ in np.arange(200):
 
     ax, ay = sef.accl(x, y)
-    vx, vy = sef.vel(x, y, vx, vy, ax, ay, dt)
+    vx, vy = sef.vel(vx, vy, ax, ay, dt)
     x, y = sef.posn(x, y, vx, vy, dt)
 
     positions.append([x, y])

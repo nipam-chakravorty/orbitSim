@@ -1,6 +1,6 @@
 import numpy as np
 
-# Defining in astronomical units
+# defining in terms of astronomical unit
 GM = 4 * np.pi**2
 
 # acceleration due to gravity
@@ -11,7 +11,7 @@ def accl(x, y):
     return accl_x, accl_y
 
 # intial vx and vy are to be provided
-def vel(x, y, vx, vy, accl_x, accl_y, t):
+def vel(vx, vy, accl_x, accl_y, t):
     vx_new = vx + accl_x*t
     vy_new = vy + accl_y*t
     return vx_new, vy_new
