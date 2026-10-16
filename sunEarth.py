@@ -19,16 +19,12 @@ y = 0
 vy = np.sqrt(GM/x)
 vx = 0
 
-positions = []
+positions = [(x,y)]
 
-dt = 0.1
+dt = 0.01
 
-for _ in np.arange(200):
-
-    ax, ay = sef.accl(x, y)
-    vx, vy = sef.vel(vx, vy, ax, ay, dt)
-    x, y = sef.posn(x, y, vx, vy, dt)
-
+for _ in np.arange(2000):
+    x,y,vx,vy = sef.RK4(x,y,vx,vy,dt)
     positions.append([x, y])
 
 positions = np.array(positions)
@@ -49,5 +45,8 @@ def update(frame):
     return planet, trail
 
 anim = FuncAnimation(fig, update, frames=len(positions), interval=20, blit=True)
+
+# uncomment it if you need the webp
+#anim.save("sunEarth.webp", writer=PillowWriter(fps=30), dpi=100)
 
 plt.show()

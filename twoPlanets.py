@@ -60,6 +60,6 @@ def update(frame):
 anim = FuncAnimation(fig, update, frames=len(positions), interval=20, blit=True)
 
 # uncomment it if you need the webp
-#anim.save("3body.webp", writer=PillowWriter(fps=30), dpi=100)
+#anim.save("2planets.webp", writer=PillowWriter(fps=30), dpi=100)
 
 plt.show()
